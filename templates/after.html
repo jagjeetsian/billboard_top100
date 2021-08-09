@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Billboard Hits</title>
+</head>
+<style>
+body {
+  background-image: url("https://www.teahub.io/photos/full/1-12156_music-background-images-hd.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.login {
+  max-width: 500px;
+  padding-left:100px;
+  padding-top:5px;
+  padding-bottom:10px;
+  margin: auto;
+}
+.image {
+  position:relative;
+  left:-85px; 
+  top:-15px;
+}
+button {
+  transition-duration: 0.4s;
+  font-size: 18px;
+  position:relative;
+  left:140px;
+}
+
+button:hover {
+  background-color: red; 
+  color: white;
+}
+input{
+  margin:5px;
+}
+.pred{
+
+  font-size:35px;
+  color:white;
+  text-shadow:4px 4px 2px black;
+  font-weight: bold;
+  width:700px;
+  position:relative;
+  left:-70px;
+
+}
+</style>
+<body>
+ <div class="login">
+	<h1 style="position: relative;margin-top:0px; top: 0px;text-shadow:3px 3px 1px white;">Billboard top100 hit prediction</h1>
+	<div class='image'>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Billboard_Hot_100_logo.jpg",alt="Billboard">
+    </div>
+
+
+   <br>
+   <br>
+   <div class="pred">
+     {{ prediction_text }}
+   </div>
+   <br>
+   <br>
+    <form action="{{ url_for('check_again')}}">
+    	
+        <button type="redirect" class="btn btn-primary btn-block btn-large">Check Again</button>
+    </form>
+ </div>
+
+
+</body>
+</html>
