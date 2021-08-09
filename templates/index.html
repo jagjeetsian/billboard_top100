@@ -7,6 +7,9 @@
 </head>
 <style>
 
+*{
+  max-height:500px}
+
 body {
   background-image: url("https://www.teahub.io/photos/full/1-12156_music-background-images-hd.png");
   background-repeat: no-repeat;
@@ -20,6 +23,8 @@ body {
   padding-top:0px;
   padding-bottom:5px;
   margin: auto;
+  
+
 }
 .image {
   position:relative;
@@ -44,12 +49,14 @@ input{
 </style>
 <body>
  <div class="login">
-	<h1 style="position: relative;margin-top:0px; top: 0px;text-shadow:3px 3px 1px white;">Billboard top100 hit prediction</h1>
+	<h1 style="position: relative;margin-top:0px; top: 0px;text-shadow:2px 2px 1px grey;">Billboard top100 hit prediction</h1>
 	<div class='image'>
     <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Billboard_Hot_100_logo.jpg",alt="Billboard">
     </div>
-    <h3 style="position:relative;top:-20px;text-shadow:2px 2px 1px white;">Enter audio features</h3>
+    <h3 style="position:relative;top:-20px;text-shadow:2px 2px 1px white; margin-top:10px; margin-bottom:4px;">Enter audio features</h3>
     <form action="{{ url_for('predict')}}"method="post" style="position:relative;top:-20px;">
+        <input type="text" name="Title" placeholder="Title"/>
+        <input type="text" name="Artist" placeholder="Arist" />
     	<input type="text" name="Danceability" placeholder="Danceability" required="required" />
         <input type="text" name="Energy" placeholder="Energy" required="required" />
 		<input type="text" name="Loudness" placeholder="Loudness" required="required" />
@@ -58,20 +65,22 @@ input{
 		<input type="text" name="Liveness" placeholder="Liveness" required="required" />
 		<input type="text" name="Valence" placeholder="Valence" required="required" />
         <input type="text" name="Tempo" placeholder="Tempo" required="required" />
-        <input list="Genre" name="Genre" placeholder="Genre" required="required">
-            <datalist id="Genre">
-                <option value="alternative">
-                <option value="classical">
-                <option value="country">
-                <option value="edm">
-                <option value="jazz">
-                <option value="metal">
-                <option value="pop">
-                <option value="rap">
-                <option value="reggae">
-                <option value="metal">
-            </datalist>
-        </input>    
+        <div class="dropdown" style="position:relative; top:5px; left:5px;">
+            <select class="item" name="Genre"  required="required" style="width:180px ">
+                <option>Genre</option>
+                <option value="alternative">alternative</option>
+                <option value="classical">classical</option>
+                <option value="country">country</option>
+                <option value="edm">edm</option>
+                <option value="jazz">jazz</option>
+                <option value="metal">metal</option>
+                <option value="pop">pop</option>
+                <option value="rap">rap</option>
+                <option value="reggae">reggae</option>
+                <option value="metal">metal</option>
+            </select> 
+        </div>    
+        <br>
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
    </div>
