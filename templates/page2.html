@@ -1,0 +1,141 @@
+
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Billboard Hits</title>
+</head>
+<style>
+
+*{
+
+  max-height:200px;
+}
+body {
+  background-image: url("https://images.unsplash.com/photo-1604514288114-3851479df2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.login {
+  max-width: 500px;
+  padding-left:100px;
+  padding-top:0px;
+  padding-bottom:5px;
+  margin: auto;
+  
+
+}
+.grid-container {
+  position:realtive;
+  
+  display: grid;
+
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  padding: 10px;
+  
+}
+
+.grid-item {
+
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+  background-color:rgba(255, 255, 255, 0.7);
+}
+.tracks {
+  max-width: 700px;
+
+  padding-left:0px;
+  padding-top:0px;
+  padding-bottom:5px;
+  margin: auto;
+  position:relative;
+  left:0px;
+  top:100px;
+  
+  
+
+}
+button {
+  transition-duration: 0.4s;
+  position:relative;
+  font-size: 18px;
+  top:45px;
+  height:60px;
+  border-radius: 20px;
+  
+
+  
+  
+}
+
+button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+</style>
+<body>
+  <div class="login">
+    <h1 style="position: relative;color:white;margin-top:0px; top: 0px;text-shadow:2px 2px 1px red;">Billboard top100 hit prediction</h1>    
+    <br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Billboard_Hot_100_logo.jpg", style="position:relative;top:-20px;width:400px;left:-350px;", alt="Billboard">
+    <img src="https://media.istockphoto.com/vectors/dirty-grunge-hand-drawn-with-brush-strokes-cross-x-vector-isolated-vector-id1201202836?k=6&m=1201202836&s=612x612&w=0&h=l95Lh3pR1DH3_PfYkOhf8cn37MeiWR_6oUwwriDvrvI=", style="position:relative;top:-210px;left:105px;width:200px;mix-blend-mode: multiply;">
+    <img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2021/05/11167spotify-logo-1920x1080-2.jpg", alt="spotify logo", style="position:relative;top:-427px;left:350px ;width:400px;height:auto;">
+
+  </div>
+  <div class="tracks">
+    <form action="{{ url_for('predict')}}"method="post" >
+        <div class="grid-container">
+          <div class="grid-item"><img src={{output2[0]}} style="width:100px;"><br>
+      <input type="radio" id="1" name="track" value=0>
+      <label for="1">{{output1[0]}}</label><br></div>
+          <div class="grid-item"><img src={{output2[1]}} style="width:100px;"><br>
+      <input type="radio" id="2" name="track" value=1>
+      <label for="2">{{output1[1]}}</label><br></div>
+          <div class="grid-item"><img src={{output2[2]}} style="width:100px;"><br>
+      <input type="radio" id="3" name="track" value=2>
+      <label for="3">{{output1[2]}}</label><br></div>
+          <div class="grid-item"><img src={{output2[3]}} style="width:100px;"><br>
+      <input type="radio" id="4" name="track" value=3>
+      <label for="4">{{output1[3]}}</label><br></div>
+          <div class="grid-item"><img src={{output2[4]}} style="width:100px;"><br>
+      <input type="radio" id="5" name="track" value=4>
+      <label for="5">{{output1[4]}}</label><br></div>
+          <div class="grid-item"><img src={{output2[5]}} style="width:100px;"><br>
+      <input type="radio" id="6" name="track" value=5>
+      <label for="6">{{output1[5]}}</label><br></div>
+          <div class="grid-item"><img src={{output2[6]}} style="width:100px;"><br>
+      <input type="radio" id="7" name="track" value=6>
+      <label for="7">{{output1[6]}}</label><br></div>
+          <div class="grid-item"><img src={{output2[7]}} style="width:100px;"><br>
+      <input type="radio" id="8" name="track" value=7>
+      <label for="8">{{output1[7]}}</label><br></div>
+          <div class="grid-item"><img src={{output2[8]}} style="width:100px;"><br>
+      <input type="radio" id="9" name="track" value=8>
+      <label for="9">{{output1[8]}}</label><br></div>
+          <div class="grid-item"><img src={{output2[9]}} style="width:100px;"><br>
+      <input type="radio" id="10" name="track" value=9>
+      <label for="10">{{output1[9]}}</label><br></div>
+          <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </div>
+  
+
+      
+      
+      
+      
+      
+      
+
+    </form>
+
+
+
+
+
+</body>
+</html>

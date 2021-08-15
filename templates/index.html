@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html >
-<!--From https://codepen.io/frytyler/pen/EGdtg-->
 <head>
   <meta charset="UTF-8">
   <title>Billboard Hits</title>
@@ -8,17 +7,17 @@
 <style>
 
 *{
-  max-height:500px}
 
+  max-height:200px;
+}
 body {
-  background-image: url("https://www.teahub.io/photos/full/1-12156_music-background-images-hd.png");
+  background-image: url("https://images.unsplash.com/photo-1604514288114-3851479df2f2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
 }
 .login {
   max-width: 500px;
-
   padding-left:100px;
   padding-top:0px;
   padding-bottom:5px;
@@ -26,64 +25,43 @@ body {
   
 
 }
-.image {
-  position:relative;
-  left:-85px; 
-  top:-15px;
 
-}
 button {
   transition-duration: 0.4s;
   font-size: 18px;
-  width:390px;
+  padding:2px;
+  border-radius: 20px;
+  width:200px;
+  position:relative;
+  left:30px
+  
+  
 }
 
 button:hover {
   background-color: #4CAF50; /* Green */
   color: white;
 }
-input{
-  margin:5px;
-}
 
 </style>
 <body>
  <div class="login">
-	<h1 style="position: relative;margin-top:0px; top: 0px;text-shadow:2px 2px 1px grey;">Billboard top100 hit prediction</h1>
-	<div class='image'>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Billboard_Hot_100_logo.jpg",alt="Billboard">
-    </div>
-    <h3 style="position:relative;top:-20px;text-shadow:2px 2px 1px white; margin-top:10px; margin-bottom:4px;">Enter audio features</h3>
-    <form action="{{ url_for('predict')}}"method="post" style="position:relative;top:-20px;">
-        <input type="text" name="Title" placeholder="Title"/>
-        <input type="text" name="Artist" placeholder="Arist" />
-    	<input type="text" name="Danceability" placeholder="Danceability" required="required" />
-        <input type="text" name="Energy" placeholder="Energy" required="required" />
-		<input type="text" name="Loudness" placeholder="Loudness" required="required" />
-        <input type="text" name="Speechiness" placeholder="Speechiness" required="required" />
-        <input type="text" name="Acousticness" placeholder="Acousticness" required="required" />
-		<input type="text" name="Liveness" placeholder="Liveness" required="required" />
-		<input type="text" name="Valence" placeholder="Valence" required="required" />
-        <input type="text" name="Tempo" placeholder="Tempo" required="required" />
-        <div class="dropdown" style="position:relative; top:5px; left:5px;">
-            <select class="item" name="Genre"  required="required" style="width:180px ">
-                <option>Genre</option>
-                <option value="alternative">alternative</option>
-                <option value="classical">classical</option>
-                <option value="country">country</option>
-                <option value="edm">edm</option>
-                <option value="jazz">jazz</option>
-                <option value="metal">metal</option>
-                <option value="pop">pop</option>
-                <option value="rap">rap</option>
-                <option value="reggae">reggae</option>
-                <option value="metal">metal</option>
-            </select> 
-        </div>    
+	<h1 style="position: relative;color:white;margin-top:0px; top: 0px;text-shadow:2px 2px 1px red;">Billboard top100 hit prediction</h1>    
+    <br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Billboard_Hot_100_logo.jpg", style="position:relative;top:-20px;width:400px;left:-350px;", alt="Billboard">
+    <img src="https://media.istockphoto.com/vectors/dirty-grunge-hand-drawn-with-brush-strokes-cross-x-vector-isolated-vector-id1201202836?k=6&m=1201202836&s=612x612&w=0&h=l95Lh3pR1DH3_PfYkOhf8cn37MeiWR_6oUwwriDvrvI=", style="position:relative;top:-210px;left:105px;width:200px;mix-blend-mode: multiply;">
+    <img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2021/05/11167spotify-logo-1920x1080-2.jpg", alt="spotify logo", style="position:relative;top:-427px;left:350px ;width:400px;height:auto;">
+    <h2 style="position:relative;top:-350px;white-space: nowrap;left:-170px;color:white;text-shadow:2px 2px 1px red; margin-top:10px; margin-bottom:4px;">The website predicts the chances of a song being in Billboard Top100 hit</h2>
+    <form action="{{ url_for('proceed')}}"method="post" style="position:relative;top:-400px;left:70px;">
+        <h2 style="color:white;position:relative;top:50px;left:-5px;text-shadow:2px 2px 1px green;">Enter Artist to get top tracks</h2>
         <br>
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        <br>
+        <input type="text" name="Artist" placeholder="Artist" required="required" style="position:relative;left:40px;top:5px;"/>
+    	
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Proceed</button>
     </form>
-   </div>
 
  </div>
 
